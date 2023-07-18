@@ -17,7 +17,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.2.1",
+    "@whiskeysockets/baileys": "https://github.com/iamrony777/baileys.git",
     "typeorm": "0.3.7"
   },
   "devDependencies": {
