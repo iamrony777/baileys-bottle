@@ -49,7 +49,7 @@ BaileysBottle.init({
 
   // Store created
   // Getting the auth handlers
-  const { state, saveState } = await auth.useAuthHandle();
+  const { state, saveCreds } = await auth.useAuthHandle();
 });
 ```
 
@@ -82,7 +82,7 @@ Another thing that i added is you can disable deletion events on `chat` and `mes
     disableDelete: ["chats"],
     // or
     disableDelete: ["messages"],
-    // or 
+    // or
     disableDelete: ["chats", "messages"],
   });
 // ...
@@ -99,7 +99,7 @@ store.bind(sock.ev);
 and
 
 ```ts
-sock.ev.on("creds.update", saveState);
+sock.ev.on("creds.update", saveCreds);
 ```
 
 parts work just like before.<br/><br/>

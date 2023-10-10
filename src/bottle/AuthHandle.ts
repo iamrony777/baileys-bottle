@@ -26,7 +26,7 @@ export default class AuthHandle {
 
   useAuthHandle = async (): Promise<{
     state: AuthenticationState;
-    saveState: () => Promise<any>;
+    saveCreds: () => Promise<any>;
   }> => {
     let creds: AuthenticationCreds;
     let keys: any = {};
@@ -42,7 +42,7 @@ export default class AuthHandle {
             keys: {},
           });
 
-    const saveState = () =>
+    const saveCreds = () =>
       this.repos.auth.upsert(
         {
           key: this.key,
@@ -76,11 +76,11 @@ export default class AuthHandle {
               Object.assign(keys[key], data[_key]);
             }
 
-            await saveState();
+            await saveCreds();
           },
         },
       },
-      saveState,
+      saveCreds,
     };
   };
 }

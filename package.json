@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "example": "ts-node src/example/example.ts",
-    "prepare": "npm run build"
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",

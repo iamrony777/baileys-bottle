@@ -15,14 +15,14 @@ BaileysBottle.init({
   console.log("DB initialized");
   const client = async (clientName: string) => {
     console.log(`Starting client "${clientName}"`);
-    
+
     const logger = log.child({});
     logger.level = "silent";
 
     console.log("Creating store...");
     const { auth, store } = await bottle.createStore(clientName);
     console.log("Creating auth...");
-    const { state, saveState } = await auth.useAuthHandle();
+    const { state, saveCreds } = await auth.useAuthHandle();
     console.log("Done");
 
     const startSocket = async () => {
@@ -59,7 +59,7 @@ BaileysBottle.init({
         //
 
         // credentials updated -- save them
-        if (events["creds.update"]) await saveState();
+        if (events["creds.update"]) await saveCreds();
 
         if (events["connection.update"]) {
           const update = events["connection.update"];
