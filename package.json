@@ -41,5 +41,6 @@
   "bugs": {
     "url": "https://github.com/deadlinecode/baileys-bottle/issues"
   },
-  "homepage": "https://github.com/deadlinecode/baileys-bottle#readme"
+  "homepage": "https://github.com/deadlinecode/baileys-bottle#readme",
+  "packageManager": "yarn@1.22.19"
 }
