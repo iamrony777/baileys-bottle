@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "example": "ts-node src/example/example.ts",
-    "prepare": "tsc"
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
